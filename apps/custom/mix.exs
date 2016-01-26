@@ -1,8 +1,8 @@
-defmodule AppA.Mixfile do
+defmodule Custom.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :app_a,
+    [app: :custom,
      version: "0.0.1",
      build_path: "../../_build",
      config_path: "../../config/config.exs",
@@ -11,7 +11,6 @@ defmodule AppA.Mixfile do
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     compilers: Mix.compilers ++ [:custom],
      deps: deps]
   end
 
@@ -36,6 +35,6 @@ defmodule AppA.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:custom, in_umbrella: true}]
+    []
   end
 end
